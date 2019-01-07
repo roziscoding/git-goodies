@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+  then
+    echo "Please provide a version type";
+    exit 1;
+fi
+
+currentBranch=$(git rev-parse --abbrev-ref HEAD)
+newVersion=$(npm version $1 --no-git-tag);
+git add .;
+
+message="$newVersion - $2"
+
+if [ -z "$2" ]
+  then
+    message="$newVersion"
+fi
+
+git commit -m "$message"
+git push -u origin $currentBranch
+echo "Bumped to version $newVersion";

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]
+  then
+    echo "No branch name provided";
+    exit 1;
+fi
+
+git checkout master
+git pull
+git checkout -B hotfix/$1
+echo "Done :D"
