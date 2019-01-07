@@ -83,6 +83,7 @@ git hotfix hotfix_name
 ```
 
 **Params**
+
 - hotfix_name
   - Description: The git-compliant name for the hotfix branch
   - Required: yes
@@ -95,4 +96,28 @@ This command performs a series of actions to ensure it creates an updated bugfix
 
 ### git pop
 
+**Syntax**
+```sh
+git pop
+```
+
+**Params**
+> No params
+
+**Usage**
+
+This command will call `git stash pop` and save you a few keystrokes :)
+
 ### git publish
+
+**Syntax**
+
+`git publish`
+
+**Params**
+
+> No params
+
+**Usage**
+
+This will call `git push -u origin current_branch_name`
